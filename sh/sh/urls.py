@@ -15,14 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from blog.views import index,page1
+from apps.blog.views import index,step1,blog
 
 urlpatterns = [
 
     
     path('admin/', admin.site.urls),
-    path('', index),#if the user doesnt type anything this part Implements
-    path('page1/', page1),
+    # path('', index),#if we dont have any other Folder in Apps folder
+    path('', include('apps.blog.urls')),
+    path('step1/',include('apps.blog.urls')),
+    path('blog/',include('apps.blog.urls')),
     
     
     

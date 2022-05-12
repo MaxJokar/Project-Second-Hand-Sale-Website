@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.blog',
-    'apps.media',
+    # 'apps.blog.apps.BlogConfig',
+    # 'apps.blog',
+    # 'apps.media',
+    
 ]
 
 MIDDLEWARE = [
@@ -61,7 +63,8 @@ ROOT_URLCONF = 'sh.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR+'/templates/',],
+        # 'DIRS': [BASE_DIR+'/templates/',], gives Error !
+        'DIRS': [os.path.join(BASE_DIR,'templates/'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,8 +88,8 @@ DATABASES = {
         #Original data give below but we change it to the next one :
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE': 'mysql.connector.django',
-        'ENGINE':'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
+        # 'ENGINE':'django.db.backends.mysql',
         'NAME': 'dbStockHouse',
         'USER':'root',
         'PASSWORD':'123456',
