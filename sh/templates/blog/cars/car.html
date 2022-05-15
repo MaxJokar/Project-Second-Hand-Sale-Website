@@ -1,0 +1,37 @@
+{% comment %} {%  extends  'maintemplate.html' %} {% endcomment %}
+
+{% load static %}
+<!-- for adding CSS we need the line  above: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Our  Car Saloon </title>
+    <link rel="stylesheet" href="{% static '/css/style.css'   %} "> 
+    {% comment %} After we changed the setting (STATICFILES_DIRS) we can use the above syntax {% endcomment %}
+
+    {% comment %} <link rel="stylesheet" href="/static/css/style.css">   {% endcomment %}
+    <!-- for adding CSS we need the line  above: -->
+
+    
+
+
+</head>
+<body>
+
+        <br>
+        {% comment %} makes vertical pictures not horizontal {% endcomment %}
+    {% comment %} <img src="{{media_url}}images/{{image}}"  alt="CarsPhoto"  alt="Cars Photo" style="width:300px;height:200;"> {% endcomment %}
+
+    <img src="{{media_url}}images/fronts.jpg"   alt="Cars Photo">
+
+
+
+
+
+
+    
+</body>
+</html>

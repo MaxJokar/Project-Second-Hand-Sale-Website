@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'apps.blog.apps.BlogConfig',
-    # 'apps.blog',
+    'apps.blog.apps.BlogConfig',  #2 After you make model in models.py here we should introduce it
+    #  'apps.blog',
     # 'apps.media',
     
 ]
@@ -137,15 +137,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.join(BASE_DIR,'static/'),
+# STATIC_ROOT=os.path.join(BASE_DIR,'static/')
+STATICFILES_DIRS=(os.path.join(BASE_DIR,'static/'),) #for CSS  , we need to write this line:Whole page gets Blue or Red or any coler we want
+#WHen you wanted to access to static Folder you should write the above  variable
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT=os.path.join(BASE_DIR,'media/'),
+MEDIA_ROOT=os.path.join(BASE_DIR,'media/')
 
 
 
 
-# Default primary key field type
+# Default primary key field type:
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 
