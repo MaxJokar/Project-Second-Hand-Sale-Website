@@ -1,40 +1,37 @@
-{% comment %} {%  extends  'maintemplate.html' %} {% endcomment %}
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Available Cars For Sale </title>
-    <link rel="stylesheet" href="{% static '/css/style.css'   %} "> 
-</head>
-<body>
+{%  extends  'maintemplate.html' %}
+{% comment %} {% load static %} {% endcomment %}
 
-    {% comment %} <img src="{{media_url}}images/Audi.jpg" class="img-class" alt="Audi">   {% endcomment %}
-     <!-- test for one photo  -->
 
-    {% for image in imageList   %}
+{% block title %}
+  Page cars
+{% endblock title%}
 
-        {% comment %} <h1> {{ i }}</h1>  {% endcomment %}
-        {% comment %} Brings you the name of  your  images but without Any Pictureb {% endcomment %}
-        {% comment %} <img src="{{media_url}}images/{{i}}" alt="Cars Photo"> {% endcomment %}
 
-        <img src="{{media_url}}images/{{image}}" alt="Cars Photo" style="width:300px;height:250;">
-        <br>
 
-    {% endfor %} 
+{% block content %}
+      {% for image in imageList   %}
+      <br>
+        {% comment %} makes vertical pictures not horizontal {% endcomment %}
+         <img src="{{media_url}}images/{{image}}"  alt="CarsPhoto"  alt="Cars Photo" style="width:300px;height:200;">
+
+      {% endfor %}
+    
+
+{% endblock %}
 
 
 
 
 
-</body>
-</html>
+{% comment %} 
 
-{% comment %} 'media_url':settings.MEDIA_URL {% endcomment %}
-
-{% comment %}        media/images/Audi.jpg or  <img src="{{media_url}}images/{{i}}" alt="Cars Photo">            {% endcomment %}
-{% comment %}        imageList=os.listdir(settings.MEDIA_ROOT+'/images')                 {% endcomment %}
+{% block content %}
 
 
+   <ul>
+      <li>Max</li>
+
+
+   </ul>
+   
+{% endblock %}    {% endcomment %}

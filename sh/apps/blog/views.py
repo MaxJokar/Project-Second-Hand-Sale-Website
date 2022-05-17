@@ -1,4 +1,4 @@
-import imp
+
 # from multiprocessing import context
 from django.shortcuts import render
 from django.http import  HttpResponse
@@ -9,13 +9,17 @@ from django.conf import settings
 # from django.shortcuts import render
 from django.template import context
 
-
+# from apps.blog.models import Author
+from .models import Author
 
 
 def car(request):
+    authors=Author.objects.all()   #we want to see in our first page the name from our dbsaved
     context={
-        'media_url':settings.MEDIA_URL 
-    }
+            'media_url':settings.MEDIA_URL,
+            'authors':authors
+        
+        }
     return render(request,'blog/cars/car.html',context)
 
 
@@ -26,12 +30,25 @@ def cars(request):
         
     context={
         'media_url':settings.MEDIA_URL,
-        "imageList":imageList
-        # imageName:'',
+        "imageList":imageList,
+        'imageList':imageList
+        
         
     }
     
     return render(request,'blog/cars/cars.html',context)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
